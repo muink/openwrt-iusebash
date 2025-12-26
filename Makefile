@@ -43,7 +43,8 @@ sed -i 's|/bin/ash|/bin/bash|g' "$$IPKG_INSTROOT/etc/passwd"
 if [ -z "$$IPKG_INSTROOT" ]; then
 	# system
 	rm -f /tmp/.busybox_ash_history 2>/dev/null
-	ln -s /tmp/.busybox_ash_history $$HOME/.bash_history
+	touch /root/.bash_history
+	ln -s /root/.bash_history /tmp/.busybox_ash_history
 fi
 exit 0
 endef
