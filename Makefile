@@ -12,6 +12,8 @@ PKG_MAINTAINER:=Anya Lin <hukk1996@gmail.com>
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
 
+PKG_BUILD_PARALLEL:=1
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/$(PKG_NAME)
@@ -22,6 +24,8 @@ define Package/$(PKG_NAME)
 	DEPENDS:=+bash
 	PKGARCH:=all
 endef
+
+Build/Compile=
 
 define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/etc/init.d/
